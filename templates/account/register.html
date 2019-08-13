@@ -1,0 +1,107 @@
+{% extends 'account/account_base.html' %}
+{% block main %}
+    <div class="card-body">
+        <h2 class="title">Registration Info</h2>
+        <form method="POST" class="js-register" action="{% url 'api-register' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-group">
+                <input class="input--style-2" type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="input-group">
+                        <input class="input--style-2" type="text" placeholder="First Name" name="first_name" required>
+                        <i class="zmdi zmdi-folder-person input-icon js-btn-calendar"></i>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group">
+                        <input class="input--style-2" type="text" placeholder="Last Name" name="last_name" required>
+                        <i class="zmdi zmdi-folder-person input-icon js-btn-calendar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="input-group">
+                        <input class="input--style-2" type="text" placeholder="Phone(+923211234567)" name="phone" required>
+                        <i class="zmdi zmdi-folder-person input-icon js-btn-calendar"></i>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group">
+                        <input class="input--style-2" type="text" placeholder="Gender" name="gender" required>
+                        <i class="zmdi zmdi-folder-person input-icon js-btn-calendar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="input-group">
+                        <input class="input--style-2" type="password" placeholder="Password" name="password"
+                               id="password" required>
+                        <i class="zmdi zmdi-key input-icon js-btn-calendar"></i>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group">
+                        <input class="input--style-2" type="password" placeholder="Confirm Password" name="password2"
+                               id="password2"
+                               required>
+                        <i class="zmdi zmdi-key input-icon js-btn-calendar"></i>
+                    </div>
+                </div>
+            </div>
+            <small id="err" style="color: red"></small>
+            <small id="success" style="color: green"></small>
+            <div class="p-t-30">
+                <button id="profile-save-btn" class="btn btn--radius btn--green" type="submit"><i id="profile-save"></i>REGISTER
+                </button> Already have an account? <a href="/login">Login</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.card-body').on('submit', '.js-register', function () {
+                var form = $(this)
+                $('#profile-save').replaceWith('<i  id="profile-save" style="color:blue !important" class="fa fa-refresh fa-spin"></i>')
+                if ($('#password').val() === $('#password2').val()) {
+                    $.ajax({
+                        url: form.attr("action"),
+                        data: new FormData(this),
+                        type: form.attr("method"),
+                        dataType: 'json',
+                        processData:false,
+                        contentType:false,
+                        success: function (data) {
+                            console.log(data)
+                            if (data.success) {
+                                {#$('#profile-save').replaceWith('<i  id="profile-save" class="fa fa-check"></i>')#}
+                                $('#profile-save-btn').html('<i  id="profile-save" class="fa fa-check"></i> Registered')
+                                $('#profile-save-btn').attr('disabled', '')
+                                $('#err').html(data.message)
+                                $('#err').css('color','green')
+                                {#window.location.href='/account/login/'#}
+                            } else {
+                                $('#profile-save-btn').html('<i  id="profile-save" style="color:red" class="fa fa-warning"></i> REGISTER')
+                                $('#err').html(data.message)
+                                $('#err').css('color','red')
+                            }
+
+
+                        },
+                        error: function () {
+                            $('#profile-save-btn').html('<i  id="profile-save" style="color:red" class="fa fa-warning"></i> Register')
+                            $('#err').html('Error! Please check your network')
+                        }
+                    });
+                } else {
+                    $('#err').html('Password and confirm password do not match')
+                }
+
+
+                return false;
+            })
+        })
+    </script>
+{% endblock %}

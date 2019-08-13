@@ -1,0 +1,63 @@
+{% extends 'account/account_base.html' %}
+{% block main %}
+    <div class="card-body">
+        <h2 class="title">Login Info</h2>
+        <form method="POST" class="js-register" action="{% url 'api-login' %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <input class="input--style-2" type="email" placeholder="Email" name="email" required>
+            </div>
+            <div class="input-group">
+                <input class="input--style-2" type="password" placeholder="Password" name="password" required>
+            </div>
+
+            <small id="err" style="color: red"></small>
+            <div class="p-t-30">
+                <button id="profile-save-btn" class="btn btn--radius btn--green" type="submit"><i id="profile-save"></i>Login
+                </button>  Don't have an account? <a href="/register">Register</a>
+            </div>
+            <br>
+
+
+        </form>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.card-body').on('submit', '.js-register', function () {
+                var form = $(this)
+                $('#profile-save').replaceWith('<i  id="profile-save" style="color:blue !important" class="fa fa-refresh fa-spin"></i>')
+
+                $.ajax({
+                    url: form.attr("action"),
+                    data: form.serialize(),
+                    type: form.attr("method"),
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data)
+                        if (data.success) {
+                            {#$('#profile-save').replaceWith('<i  id="profile-save" class="fa fa-check"></i>')#}
+                            $('#profile-save-btn').html('<i  id="profile-save" class="fa fa-check"></i> Login')
+                            $('#profile-save-btn').attr('disabled', '')
+                            $('#err').html(data.message)
+                            $('#err').css('color','green')
+                            localStorage.setItem('token', data.data.token)
+                            localStorage.setItem('user', JSON.stringify(data.data.user))
+                            //window.location.replace('/')
+                        } else {
+                            $('#profile-save-btn').html('<i  id="profile-save" style="color:red" class="fa fa-warning"></i> Login')
+                            $('#err').html(data.message)
+                            $('#err').css('color','red')
+                        }
+                    },
+                    error:function () {
+                         $('#profile-save-btn').html('<i  id="profile-save" style="color:red" class="fa fa-warning"></i> Login')
+                            $('#err').html('Error! Please check your network')
+                        $('#err').css('color','red')
+                    }
+                });
+                return false;
+            })
+        })
+    </script>
+{% endblock %}

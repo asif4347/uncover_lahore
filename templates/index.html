@@ -97,32 +97,24 @@
                                                 <div style="position:relative;display:inline-block;"
                                                      class="tp-splitted tp-wordsplit">
                                                     <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
-                                                         class="tp-splitted tp-charsplit">C
+                                                         class="tp-splitted tp-charsplit">L
                                                     </div>
                                                     <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
-                                                         class="tp-splitted tp-charsplit">I
+                                                         class="tp-splitted tp-charsplit">A
                                                     </div>
                                                     <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
-                                                         class="tp-splitted tp-charsplit">T
-                                                    </div>
-                                                    <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
-                                                         class="tp-splitted tp-charsplit">Y
-                                                    </div>
-                                                    <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
-                                                         class="tp-splitted tp-charsplit">T
+                                                         class="tp-splitted tp-charsplit">H
                                                     </div>
                                                     <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
                                                          class="tp-splitted tp-charsplit">O
                                                     </div>
                                                     <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
-                                                         class="tp-splitted tp-charsplit">U
-                                                    </div>
-                                                    <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
                                                          class="tp-splitted tp-charsplit">R
                                                     </div>
                                                     <div style="position: relative; display: inline-block; visibility: inherit; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"
-                                                         class="tp-splitted tp-charsplit">S
+                                                         class="tp-splitted tp-charsplit">E
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -200,7 +192,7 @@
                                              data-paddingtop="[10,10,10,10]" data-paddingright="[30,30,30,30]"
                                              data-paddingbottom="[10,10,10,10]" data-paddingleft="[30,30,30,30]"
                                              style="z-index: 8; white-space: nowrap; font-weight: 400; font-family: Montserrat; border-color: rgba(255, 255, 255, 0.5); border-width: 1px; outline: currentcolor none medium; box-shadow: none; box-sizing: border-box; cursor: pointer; visibility: inherit; transition: none 0s ease 0s; text-align: left; line-height: 14px; margin: 0px; padding: 10px 30px; letter-spacing: 3px; font-size: 14px; min-height: 0px; min-width: 0px; max-height: none; max-width: none; opacity: 1; transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;">
-                                            NEXT GOODIE
+                                            UNCOVER LAHORE
                                         </div>
                                     </div>
                                 </div>
@@ -911,7 +903,7 @@
 
             <div class="main_title">
                 <h2>Lahore <span>Top</span> Categories</h2>
-                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
+                <p>Top Historical and Adventural places of Lahore.</p>
             </div>
 
             <div class="row">
@@ -922,7 +914,7 @@
                     <div class="tour_container">
                         <div class="ribbon_3 popular"><span>Popular</span></div>
                         <div class="img_container">
-                            <a href="http://www.ansonika.com/citytours/single_tour.html">
+                            <a href="{% url 'spots' category.pk %}">
                                 <img src="{{ category.image.url }}"
                                      class="img-fluid" alt="image" width="800" height="533">
                                 <div class="short_info">
@@ -946,366 +938,10 @@
 
             <hr>
 
-            <div class="main_title">
-                <h2>Paris <span>Top</span> Hotels</h2>
-                <p>Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.</p>
-            </div>
-
-            <div class="row">
-
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s"
-                     style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
-                    <div class="hotel_container">
-                        <div class="ribbon_3 popular"><span>Popular</span></div>
-                        <div class="img_container">
-                            <a href="http://www.ansonika.com/citytours/single_hotel.html">
-                                <img src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/hotel_1.jpg"
-                                     class="img-fluid" alt="image" width="800" height="533">
-                                <div class="score"><span>7.5</span>Good</div>
-                                <div class="short_info hotel">
-                                    From/Per night<span class="price"><sup>$</sup>59</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="hotel_title">
-                            <h3><strong>Park Hyatt</strong> Hotel</h3>
-                            <div class="rating">
-                                <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star-empty"></i>
-                            </div>
-                            <!-- end rating -->
-                            <div class="wishlist">
-                                <a class="tooltip_flip tooltip-effect-1" href="#">+<span
-                                        class="tooltip-content-flip"><span
-                                        class="tooltip-back">Add to wishlist</span></span></a>
-                            </div>
-                            <!-- End wish list-->
-                        </div>
-                    </div>
-                    <!-- End box -->
-                </div>
-                <!-- End col -->
-
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s"
-                     style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
-                    <div class="hotel_container">
-                        <div class="ribbon_3 popular"><span>Popular</span></div>
-                        <div class="img_container">
-                            <a href="http://www.ansonika.com/citytours/single_hotel.html">
-                                <img src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/hotel_2.jpg"
-                                     class="img-fluid" alt="image" width="800" height="533">
-                                <div class="score"><span>9.0</span>Superb</div>
-                                <div class="short_info hotel">
-                                    From/Per night<span class="price"><sup>$</sup>45</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="hotel_title">
-                            <h3><strong>Mariott</strong> Hotel</h3>
-                            <div class="rating">
-                                <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star-empty"></i>
-                            </div>
-                            <!-- end rating -->
-                            <div class="wishlist">
-                                <a class="tooltip_flip tooltip-effect-1" href="#">+<span
-                                        class="tooltip-content-flip"><span
-                                        class="tooltip-back">Add to wishlist</span></span></a>
-                            </div>
-                            <!-- End wish list-->
-                        </div>
-                    </div>
-                    <!-- End box -->
-                </div>
-                <!-- End col -->
-
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s"
-                     style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
-                    <div class="hotel_container">
-                        <div class="ribbon_3"><span>Top rated</span></div>
-                        <div class="img_container">
-                            <a href="http://www.ansonika.com/citytours/single_hotel.html">
-                                <img src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/hotel_3.jpg"
-                                     class="img-fluid" alt="image" width="800" height="533">
-                                <div class="score"><span>9.5</span>Superb</div>
-                                <div class="short_info hotel">
-                                    From/Per night<span class="price"><sup>$</sup>39</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="hotel_title">
-                            <h3><strong>Lumiere</strong> Hotel</h3>
-                            <div class="rating">
-                                <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star-empty"></i>
-                            </div>
-                            <!-- end rating -->
-                            <div class="wishlist">
-                                <a class="tooltip_flip tooltip-effect-1" href="#">+<span
-                                        class="tooltip-content-flip"><span
-                                        class="tooltip-back">Add to wishlist</span></span></a>
-                            </div>
-                            <!-- End wish list-->
-                        </div>
-                    </div>
-                    <!-- End box -->
-                </div>
-                <!-- End col -->
-
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.4s"
-                     style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
-                    <div class="hotel_container">
-                        <div class="ribbon_3"><span>Top rated</span></div>
-                        <div class="img_container">
-                            <a href="http://www.ansonika.com/citytours/single_hotel.html">
-                                <img src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/hotel_4.jpg"
-                                     class="img-fluid" alt="image" width="800" height="533">
-                                <div class="score"><span>7.5</span>Good</div>
-                                <div class="short_info hotel">
-                                    From/Per night<span class="price"><sup>$</sup>45</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="hotel_title">
-                            <h3><strong>Novelle</strong> Hotel</h3>
-                            <div class="rating">
-                                <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star-empty"></i>
-                            </div>
-                            <!-- end rating -->
-                            <div class="wishlist">
-                                <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
-                                        class="tooltip-content-flip"><span
-                                        class="tooltip-back">Add to wishlist</span></span></a>
-                            </div>
-                            <!-- End wish list-->
-                        </div>
-                    </div>
-                    <!-- End box -->
-                </div>
-                <!-- End col -->
-
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.5s"
-                     style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
-                    <div class="hotel_container">
-                        <div class="ribbon_3"><span>Top rated</span></div>
-                        <div class="img_container">
-                            <a href="http://www.ansonika.com/citytours/single_hotel.html">
-                                <img src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/hotel_5.jpg"
-                                     class="img-fluid" alt="image" width="800" height="533">
-                                <div class="score"><span>8.0</span>Good</div>
-                                <div class="short_info hotel">
-                                    From/Per night<span class="price"><sup>$</sup>39</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="hotel_title">
-                            <h3><strong>Louvre</strong> Hotel</h3>
-                            <div class="rating">
-                                <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star-empty"></i>
-                            </div>
-                            <!-- end rating -->
-                            <div class="wishlist">
-                                <a class="tooltip_flip tooltip-effect-1" href="#">+<span
-                                        class="tooltip-content-flip"><span
-                                        class="tooltip-back">Add to wishlist</span></span></a>
-                            </div>
-                            <!-- End wish list-->
-                        </div>
-                    </div>
-                    <!-- End box -->
-                </div>
-                <!-- End col -->
-
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s"
-                     style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
-                    <div class="hotel_container">
-                        <div class="ribbon_3"><span>Top rated</span></div>
-                        <div class="img_container">
-                            <a href="http://www.ansonika.com/citytours/single_hotel.html">
-                                <img src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/hotel_6.jpg"
-                                     class="img-fluid" alt="image" width="800" height="533">
-                                <div class="score"><span>8.5</span>Superb</div>
-                                <div class="short_info hotel">
-                                    From/Per night<span class="price"><sup>$</sup>45</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="hotel_title">
-                            <h3><strong>Concorde</strong> Hotel</h3>
-                            <div class="rating">
-                                <i class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star voted"></i><i class="icon-star voted"></i><i
-                                    class="icon-star-empty"></i>
-                            </div>
-                            <!-- end rating -->
-                            <div class="wishlist">
-                                <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span
-                                        class="tooltip-content-flip"><span
-                                        class="tooltip-back">Add to wishlist</span></span></a>
-                            </div>
-                            <!-- End wish list-->
-                        </div>
-                    </div>
-                    <!-- End box -->
-                </div>
-                <!-- End col -->
-
-            </div>
-            <!-- End row -->
-
-            <p class="text-center nopadding">
-                <a href="http://www.ansonika.com/citytours/all_hotels_list.html" class="btn_1 medium"><i
-                        class="icon-eye-7"></i>View all hotels (70) </a>
-            </p>
-
         </div>
         <!-- End container -->
 
-        <div class="white_bg">
-            <div class="container margin_60">
-                <div class="main_title">
-                    <h2>Other <span>Popular</span> tours</h2>
-                    <p>
-                        Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
-                    </p>
-                </div>
-                <div class="row add_bottom_45">
-                    <div class="col-lg-4 other_tours">
-                        <ul>
-                            <li><a href="#"><i class="icon_set_1_icon-3"></i>Tour Eiffel<span class="other_tours_price">$42</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-30"></i>Shopping tour<span
-                                    class="other_tours_price">$35</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-44"></i>Versailles tour<span
-                                    class="other_tours_price">$20</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-3"></i>Montparnasse skyline<span
-                                    class="other_tours_price">$26</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-44"></i>Pompidue<span class="other_tours_price">$26</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-3"></i>Senna River tour<span
-                                    class="other_tours_price">$32</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 other_tours">
-                        <ul>
-                            <li><a href="#"><i class="icon_set_1_icon-1"></i>Notredame<span class="other_tours_price">$48</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-4"></i>Lafaiette<span class="other_tours_price">$55</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-30"></i>Trocadero<span class="other_tours_price">$76</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-3"></i>Open Bus tour<span
-                                    class="other_tours_price">$55</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-30"></i>Louvre museum<span
-                                    class="other_tours_price">$24</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-3"></i>Madlene Cathedral<span
-                                    class="other_tours_price">$24</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 other_tours">
-                        <ul>
-                            <li><a href="#"><i class="icon_set_1_icon-37"></i>Montparnasse<span
-                                    class="other_tours_price">$36</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-1"></i>D'Orsey museum<span
-                                    class="other_tours_price">$28</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-50"></i>Gioconda Louvre musuem<span
-                                    class="other_tours_price">$44</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-44"></i>Tour Eiffel<span
-                                    class="other_tours_price">$56</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-50"></i>Ladefanse<span class="other_tours_price">$16</span></a>
-                            </li>
-                            <li><a href="#"><i class="icon_set_1_icon-44"></i>Notredame<span class="other_tours_price">$26</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End row -->
 
-                <div class="banner colored">
-                    <h4>Discover our Top tours <span>from $34</span></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.
-                    </p>
-                    <a href="http://www.ansonika.com/citytours/single_tour.html" class="btn_1 white">Read more</a>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <p>
-                            <a href="#"><img
-                                    src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/bus.jpg"
-                                    alt="Pic" class="img-fluid"></a>
-                        </p>
-                        <h4><span>Sightseen tour</span> booking</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus
-                            civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus
-                            volumus explicari qui ex.
-                        </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <p>
-                            <a href="#"><img
-                                    src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/transfer.jpg"
-                                    alt="Pic" class="img-fluid"></a>
-                        </p>
-                        <h4><span>Transfer</span> booking</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus
-                            civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus
-                            volumus explicari qui ex.
-                        </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <p>
-                            <a href="#"><img
-                                    src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/guide.jpg"
-                                    alt="Pic" class="img-fluid"></a>
-                        </p>
-                        <h4><span>Tour guide</span> booking</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus
-                            civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus
-                            volumus explicari qui ex.
-                        </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <p>
-                            <a href="#"><img
-                                    src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/hotel.jpg"
-                                    alt="Pic" class="img-fluid"></a>
-                        </p>
-                        <h4><span>Hotel</span> booking</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus
-                            civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus
-                            volumus explicari qui ex.
-                        </p>
-                    </div>
-                </div>
-                <!-- End row -->
-
-            </div>
-            <!-- End container -->
-        </div>
         <!-- End white_bg -->
 
         <section class="promo_full">
@@ -1313,12 +949,9 @@
                 <div>
                     <h3>BELONG ANYWHERE</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus
-                        efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus
-                        explicari qui ex.
+                        “Lahore was a different world in its own; the busy life, the rich history, the colourful culture, and the unfamiliar faces”
                     </p>
-                    <a href="https://www.youtube.com/watch?v=Zz5cu72Gv5Y" class="video"><i
-                            class="icon-play-circled2-1"></i></a>
+                    <a href="https://www.youtube.com/watch?v=Zz5cu72Gv5Y" class="video"></a>
                 </div>
             </div>
         </section>
@@ -1327,9 +960,9 @@
         <div class="container margin_60">
 
             <div class="main_title">
-                <h2>Some <span>good</span> reasons</h2>
+                <h2>Lahore <span>good</span> reasons</h2>
                 <p>
-                    Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+                    This city is known for its rich culture and lively atmosphere. Pakistan's major Urdu film industry Lollywood is based here at the "Cultural Heart of Pakistan".
                 </p>
             </div>
 
@@ -1340,9 +973,7 @@
                     <div class="feature_home">
                         <i class="icon_set_1_icon-41"></i>
                         <h3><span>+120</span> Premium tours</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
-                            tempor imperdiet deterruisset.
+                        <p>hgjdhgjjjyshh.
                         </p>
                         <a href="http://www.ansonika.com/citytours/about.html" class="btn_1 outline">Read more</a>
                     </div>
@@ -1354,7 +985,7 @@
                         <i class="icon_set_1_icon-30"></i>
                         <h3><span>+1000</span> Customers</h3>
                         <p>
-                            Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id
+                            Lorem ipsum dolor sit amet, vix eratmhhdynnaijbgd nhbgmk anvujdu ahnsmjacd un audiam ei. Cum doctus civibus efficiantur in. Nec id
                             tempor imperdiet deterruisset.
                         </p>
                         <a href="http://www.ansonika.com/citytours/about.html" class="btn_1 outline">Read more</a>
@@ -1381,11 +1012,11 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <img src="CITY%20TOURS%20-%20City%20tours%20and%20travel%20site%20template%20by%20Ansonika_files/laptop.png"
+                    <img src="{% static 'theme/laptop.png' %}"
                          alt="Laptop" class="img-fluid laptop">
                 </div>
                 <div class="col-md-6">
-                    <h3><span>Get started</span> with CityTours</h3>
+                    <h3><span>Get started</span> with LahoreTours</h3>
                     <p>
                         Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor
                         imperdiet deterruisset.
@@ -1394,6 +1025,7 @@
                         <li><span>1</span>Select your preferred tours</li>
                         <li><span>2</span>Purchase tickets and options</li>
                         <li><span>3</span>Pick them directly from your office</li>
+                         <li><span>4</span>Purchase directly from website</li>
                     </ul>
                     <a href="http://www.ansonika.com/citytours/all_tour_list.html" class="btn_1">Start now</a>
                 </div>

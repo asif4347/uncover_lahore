@@ -1,4 +1,60 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block main %}
+    <style>
+    header{
+        background-color: #1c1b1bcc;
+    }
+    </style>
+    <br><br><br>
+     <main style="margin-bottom: 355px;">
+    <div class="container margin_60">
+
+            <div class="main_title">
+
+                 <h2>Spots of <span>{{ category.title }}</span> </h2>
+{#                <p>{{ category.d }}</p>#}
+            </div>
+
+            <div class="row">
+                {% for spot in spots %}
+
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s"
+                     style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+                    <div class="tour_container">
+
+                        <div class="img_container">
+                            <a href="{% url 'activities' spot.pk %}">
+                                <img src="{{ spot.background_image.url }}"
+                                     class="img-fluid" alt="image" width="800" height="533">
+                                <div class="short_info">
+                                    <i class="icon_set_1_icon-44"></i>{{ spot.title }}<span class="price"><sup></sup></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="tour_title">
+							<h5>{{ spot.description }}</h5>
+							<div class="rating">
+								<small style="color: green">{{ spot.location.title }}</small>
+							</div>
+							<!-- end rating -->
+
+							<!-- End wish list-->
+						</div>
+
+                    </div>
+                    <!-- End box tour -->
+                </div>
+                {% endfor %}
+                <!-- End col -->
+            </div>
+            <!-- End row -->
+
+
+            <hr>
+
+        </div>
+        <!-- End container -->
+     </main>
+
 {% endblock %}

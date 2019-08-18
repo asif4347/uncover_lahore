@@ -93,7 +93,7 @@ class Category(models.Model):
 
 
 class UserSchedule(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     date_time = models.DateTimeField(null=False)
     description = models.TextField(max_length=500, null=True, blank=True)
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE, null=True)

@@ -18,17 +18,25 @@ def spots(request, pk):
         'category': category,
         'spots': spots
     }
-    return render(request, 'index.html', context)
+    return render(request, 'spot.html', context)
 
 
 def activities(request, pk):
     spot = Spot.objects.get(pk=pk)
-    acts = Spot.activities.all()
+    acts = spot.activities.all()
     context = {
         'spot': spot,
         'activities': acts
     }
-    return render(request, 'index.html', context)
+    return render(request, 'activities.html', context)
+
+
+def activity_detail(request, pk):
+    activity = Activity.objects.get(pk=pk)
+    context={
+        'activity':activity
+    }
+    return render(request,'activity_detail_page.html',context)
 
 
 def login(request):
@@ -41,9 +49,3 @@ def register(request):
 
 def contact(request):
     return render(request, 'account/contact.html')
-
-def spot(request):
-    return render(request, 'spot.html')
-
-def activities(request):
-    return render(request, 'activities.html')

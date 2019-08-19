@@ -33,10 +33,12 @@ def activities(request, pk):
 
 def activity_detail(request, pk):
     activity = Activity.objects.get(pk=pk)
-    context={
-        'activity':activity
+    schedules = Schedule.objects.filter(activity=activity)
+    context = {
+        'activity': activity,
+        'schedules': schedules
     }
-    return render(request,'activity_detail_page.html',context)
+    return render(request, 'activity_detail_page.html', context)
 
 
 def login(request):
@@ -49,3 +51,12 @@ def register(request):
 
 def contact(request):
     return render(request, 'account/contact.html')
+
+
+def payment(request, pk):
+    booking = Booking.objects.get(pk=pk)
+    return render(request, 'payment.html', {'booking': booking})
+
+
+def bookings(request):
+    return render(request, 'bookings.html')

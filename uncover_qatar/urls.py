@@ -11,7 +11,7 @@ urlpatterns = [
     path('api/', include('account.urls')),
     path('main-api/', include('mainApp.urls')),
     path('', include('frontend.urls')),
-    path('checkout-success/', booking_success),
+    path('checkout-success/<int:pk>', booking_success),
 
 
 ]

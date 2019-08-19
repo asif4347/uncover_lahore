@@ -341,12 +341,12 @@ def book_activity(request):
         activity.save()
         if perls > 0 and perl_rate > 0:
             total_price = total_price - (perls / perl_rate)
-        bookings = Booking.objects.filter(activity=activity, user=user, schedule_id=schedule_id)
-        if bookings:
-            return Response(
-                failure_response(data=None, msg="You have already booked this schedule for this activity"),
-                status=200
-            )
+        # bookings = Booking.objects.filter(activity=activity, user=user, schedule_id=schedule_id)
+        # if bookings:
+        #     return Response(
+        #         failure_response(data=None, msg="You have already booked this schedule for this activity"),
+        #         status=200
+        #     )
 
         booking = Booking.objects.create(activity=activity, user=user, seats=seats, total_price=total_price,
                                          phone=phone, schedule=schedule)
@@ -372,14 +372,15 @@ def book_activity(request):
             'cache-control': "no-cache",
 
         }
-        url = "https://maktapp.credit/v2/AddTransaction"
-        response = requests.request("POST", url, data=json_data
-                                    , headers=headers)
-        if response.status_code == 200:
-            return Response(
-                success_response(data=json.loads(response.text)['result'], msg='Follow the link to make payment'),
-                status=200
-            )
+        url = "http://"+request.get_host()+"/payment/"+str(booking.pk)+"?orderId="+str(booking.pk)+'&transid='+User.objects.make_random_password()
+        # url = "https://maktapp.credit/v2/AddTransaction"
+        # response = requests.request("POST", url, data=json_data
+        #                             , headers=headers)
+        # if response.status_code == 200:
+        return Response(
+            success_response(data=url, msg='Follow the link to make payment'),
+            status=200
+        )
 
     errors = error(serializer)
     return Response(
@@ -390,9 +391,8 @@ def book_activity(request):
     )
 
 
-def booking_success(request):
-    pk = request.GET.get('orderId')
-    transid = request.GET.get('transid')
+def booking_success(request,pk):
+    transid = request.POST.get('transid')
     booking = Booking.objects.get(pk=pk)
     booking.payment_done = True
     booking.transaction_id = transid

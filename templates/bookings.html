@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+    <style>
+        header {
+            background-color: #1c1b1bcc;
+        }
+    </style>
+    <br><br><br>
+    <main style="margin-bottom: 355px;">
+        <div class="container margin_60">
+            <div class="row" id="bookings">
+
+            </div>
+        </div>
+    </main>
+    <script>
+        $(document).ready(function () {
+            var user = localStorage.getItem('user')
+            if (user) {
+                var html = ''
+                $.ajax({
+                        url: '/main-api/api/get-bookings/',
+                        type: 'get',
+                        dataType: 'json',
+                        headers: {"Authorization": 'JWT ' + localStorage.getItem('token')},
+                        success: function (data) {
+
+                            data.data.forEach(function (booking) {
+                                console.log(booking)
+                                html += ` <div class="col-lg-12">
+                    <div class="strip_all_tour_list wow fadeIn" data-wow-delay="0.1s"
+                         style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4">
+                                <div class="wishlist_close">-</div>
+                                <div class="img_list">
+                                    <a href="http://www.ansonika.com/citytours/single_tour.html">
+                                        <div class="ribbon popular"></div>
+                                        <img src="${booking.activity.background_image}"
+                                             alt="Image">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="tour_list_desc">
+
+                                    <h3><strong>${booking.activity.title}</strong> </h3>
+                                    <p>${booking.activity.description}</p>
+                                    <i>${booking.schedule.start_time}</i>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-2">
+                                <div class="price_list">
+                                    <div><sup>PKR</sup>${booking.activity.price}
+                                        <small>*per person</small>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+                            })
+                            console.log(html)
+                            $('#bookings').html(html)
+                        }
+                    }
+                )
+            }
+             else {
+                window.location.replace('/login')
+            }
+        })
+
+    </script>
+{% endblock %}

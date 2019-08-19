@@ -43,7 +43,7 @@
                             $('#err').css('color','green')
                             localStorage.setItem('token', data.data.token)
                             localStorage.setItem('user', JSON.stringify(data.data.user))
-                            //window.location.replace('/')
+                            window.location.replace('/')
                         } else {
                             $('#profile-save-btn').html('<i  id="profile-save" style="color:red" class="fa fa-warning"></i> Login')
                             $('#err').html(data.message)

@@ -158,10 +158,35 @@
                 <div class="col-6"><i class="icon-phone"></i><strong>0308-0143794</strong></div>
                 <div class="col-6">
                     <ul id="top_links">
-                        <li><a href="/login" id="access_link">log In</a></li>
-                        <li><a href="/register" id="wishlist_link">Register</a></li>
-                        <li><a href="/">Home Page</a></li>
+
+
                     </ul>
+                    <script>
+                        $(document).ready(function () {
+                            var usr = localStorage.getItem('user')
+                            console.log(usr)
+                            usr=JSON.parse(usr)
+                            var links=''
+                            if (usr) {
+                                links = ` <li><a href="javascript:void(0)" onclick="logout()" id="access_link">logout(${usr.first_name})</a></li>
+
+                        <li><a href="/">Home Page</a></li>`
+                            }
+                            else {
+                                links=` <li><a href="/login" id="access_link">log In</a></li>
+                        <li><a href="/register" id="wishlist_link">Register</a></li>
+                        <li><a href="/">Home Page</a></li>`
+                            }
+                            $('#top_links').html(links)
+                        })
+                        function logout() {
+                            localStorage.removeItem('user')
+                            localStorage.removeItem('token')
+                            $('#top_links').html(`<li><a href="/login" id="access_link">log In</a></li>
+                        <li><a href="/register" id="wishlist_link">Register</a></li>
+                        <li><a href="/">Home Page</a></li>`)
+                        }
+                    </script>
                 </div>
             </div><!-- End row -->
         </div><!-- End container-->
@@ -187,7 +212,7 @@
 
                         </li>
                         <li class="submenu">
-                            <a href="/" class="show-submenu">My Bookings <i class="icon-down-open-mini"></i></a>
+                            <a href="/my-bookings" class="show-submenu">My Bookings <i class="icon-down-open-mini"></i></a>
 
                         </li>
                         <li class="submenu">
